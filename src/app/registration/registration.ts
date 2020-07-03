@@ -6,9 +6,8 @@ export class ResponseWithError<T> {
 }
 
 export class RegisterDto{
- id :string;
- empFullName :string;
- emailId:string;
- password:string;
+  id :string;
+  empFullName :string;
+  emailId:string;
+  password:string;
 }
-

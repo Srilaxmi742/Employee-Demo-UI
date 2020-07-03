@@ -1,0 +1,41 @@
+
+<div style="text-align: center">
+  <h3>Registration</h3>
+  <form [formGroup]="employeeForm"  (ngSubmit)="onSubmit(employeeForm)">
+    <mat-form-field>
+      <input matInput type="text" placeholder="Employee Name" formControlName="employeeName" required>
+      <mat-error *ngIf="employeeForm.get('employeeName').hasError('required')">
+        <strong>Student Name is Required</strong>
+      </mat-error>
+    </mat-form-field>
+    <br/>
+
+    <mat-form-field>
+      <input matInput type="text" placeholder="Id" formControlName="id" required>
+      <mat-error *ngIf="employeeForm.get('id').hasError('required')">
+        <strong>Id is Required</strong>
+      </mat-error>
+    </mat-form-field>
+    <br/>
+
+    <mat-form-field>
+      <input matInput type="text" placeholder="Email Id" formControlName="emailId" required>
+      <mat-error *ngIf="employeeForm.get('emailId').hasError('required')">
+        <strong>EmailId is Required</strong>
+      </mat-error>
+    </mat-form-field>
+    <br/>
+
+    <mat-form-field>
+      <input matInput type="text" placeholder="Password" formControlName="password" required>
+      <mat-error *ngIf="employeeForm.get('password').hasError('required')">
+        <strong>Password is Required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <div class="submit-btn-panel" fxLayout="row" fxLayoutAlign="space-evenly center center">
+      <button type="submit" mat-flat-button color="primary" fxLayoutAlign="center">Submit</button>
+    </div>
+  </form>
+
+</div>

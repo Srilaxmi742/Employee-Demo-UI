@@ -1,0 +1,16 @@
+
+.empTable {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 60%;
+  margin-left: 20%;
+}
+
+.empTable td, #empTable th {
+  border: 1px solid #ddd;
+}
+
+.empTable th {
+  background-color: #4CAF50;
+  color: white;
+}

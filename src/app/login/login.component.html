@@ -1,0 +1,35 @@
+
+<div style="text-align: center">
+  <h3>Login</h3>
+  <form [formGroup]="empForm"  (ngSubmit)="onSubmit(empForm)">
+   <!-- <mat-form-field>
+      <input matInput type="text" placeholder="Employee Name" formControlName="employeeName" required>
+      <mat-error *ngIf="empForm.get('employeeName').hasError('required')">
+        <strong>Student Name is Required</strong>
+      </mat-error>
+    </mat-form-field>-->
+
+    <mat-form-field>
+      <input matInput placeholder="UserName or Email Id " formControlName="userNameOrEmailId" required>
+      <mat-error *ngIf="empForm.get('userNameOrEmailId').hasError('required')">
+        <strong>EmailId or User Name is Required</strong>
+      </mat-error>
+    </mat-form-field>
+    <br/>
+
+    <mat-form-field>
+      <input matInput placeholder="Password" formControlName="password" required>
+      <mat-error *ngIf="empForm.get('password').hasError('required')">
+        <strong>Password is Required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <div class="submit-btn-panel" fxLayout="row" fxLayoutAlign="space-evenly center center">
+      <button type="submit" mat-flat-button color="primary" fxLayoutAlign="center">Login</button>
+    </div>
+  </form>
+  <br/>
+
+
+</div>
+

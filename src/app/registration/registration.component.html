@@ -11,7 +11,7 @@
     <br/>
 
     <mat-form-field>
-      <input matInput type="text" placeholder="Id" formControlName="id" required>
+      <input matInput placeholder="Id" formControlName="id" required>
       <mat-error *ngIf="employeeForm.get('id').hasError('required')">
         <strong>Id is Required</strong>
       </mat-error>
@@ -19,7 +19,7 @@
     <br/>
 
     <mat-form-field>
-      <input matInput type="text" placeholder="Email Id" formControlName="emailId" required>
+      <input matInput placeholder="Email Id" formControlName="emailId" required>
       <mat-error *ngIf="employeeForm.get('emailId').hasError('required')">
         <strong>EmailId is Required</strong>
       </mat-error>
@@ -27,15 +27,21 @@
     <br/>
 
     <mat-form-field>
-      <input matInput type="text" placeholder="Password" formControlName="password" required>
+      <input matInput placeholder="Password" formControlName="password" required>
       <mat-error *ngIf="employeeForm.get('password').hasError('required')">
         <strong>Password is Required</strong>
       </mat-error>
     </mat-form-field>
 
     <div class="submit-btn-panel" fxLayout="row" fxLayoutAlign="space-evenly center center">
-      <button type="submit" mat-flat-button color="primary" fxLayoutAlign="center">Submit</button>
+      <button type="submit" mat-flat-button color="primary" fxLayoutAlign="center"
+              [routerLink]="['/registration']">Register</button>
     </div>
   </form>
+<br/>
+  <div class="submit-btn-panel" fxLayout="row" fxLayoutAlign="space-evenly center center">
+    <button type="submit" mat-flat-button color="accent"
+            fxLayoutAlign="center" [routerLink]="['/login']">Submit</button>
+  </div>
 
 </div>

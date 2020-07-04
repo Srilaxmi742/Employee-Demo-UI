@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {RegistrationService} from '../registration/registration.service';
 import {LoginDto} from './login';
+import {MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-login',
@@ -10,8 +11,11 @@ import {LoginDto} from './login';
 })
 export class LoginComponent implements OnInit {
 
+  hide = true;
   empForm:FormGroup;
-  constructor(private registrationService:RegistrationService,private fb: FormBuilder) { }
+  constructor(private registrationService:RegistrationService,
+              private fb: FormBuilder,
+              private snackBar: MatSnackBar) { }
 
   ngOnInit() {
 
@@ -31,8 +35,19 @@ export class LoginComponent implements OnInit {
     empInfo.userNameOrEmailId = this.empForm.controls['userNameOrEmailId'].value;
     empInfo.password = this.empForm.controls['password'].value;
 
-    this.registrationService.getLoginDetails(empInfo).subscribe(x=>{
-      console.log(x);
+    this.registrationService.getLoginDetails(empInfo).subscribe(data=>{
+      console.log(data);
+      if (!data.error) {
+        this.openSnackBar('Login Success !');
+      } else if (data.error) {
+        this.openSnackBar(data.errorMsg);
+      }
+    });
+  }
+
+  openSnackBar(message: string) {
+    this.snackBar.open(message, '', {
+      duration: 3000
     });
   }
 

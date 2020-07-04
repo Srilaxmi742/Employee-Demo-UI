@@ -7,6 +7,10 @@ import {EmployeeDataComponent} from './employee-data/employee-data.component';
 
 const routes: Routes = [
   {
+    path:'',
+    component:RegistrationComponent
+  },
+  {
     path:'login',
     component:LoginComponent
   },
@@ -15,7 +19,7 @@ const routes: Routes = [
     component:RegistrationComponent
   },
   {
-    path:'employee-data',
+    path:'employeeList',
     component:EmployeeDataComponent
   }
 ];

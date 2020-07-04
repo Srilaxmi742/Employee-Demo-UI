@@ -12,6 +12,9 @@ import { LoginComponent } from './login/login.component';
 import {RouterModule} from '@angular/router';
 import { EmployeeDataComponent } from './employee-data/employee-data.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
+import {MatIconModule} from '@angular/material/icon';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
 
 @NgModule({
   declarations: [
@@ -19,20 +22,22 @@ import { SidenavComponent } from './sidenav/sidenav.component';
     RegistrationComponent,
     LoginComponent,
     EmployeeDataComponent,
-    SidenavComponent
+    SidenavComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatFormFieldModule,
-    MatInputModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    MatButtonModule,
-    MatTableModule,
-    RouterModule.forRoot([]),
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatFormFieldModule,
+        MatInputModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        MatButtonModule,
+        MatTableModule,
+        RouterModule.forRoot([]),
+        MatIconModule,
+      MatSnackBarModule,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

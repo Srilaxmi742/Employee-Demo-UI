@@ -43,12 +43,11 @@ export class RegistrationComponent implements OnInit {
 
     this.registrationService.getRegistration(employeeDetails).subscribe(x=>{
       console.log(x);
-      if (x.response.emailId == '' || x.response.empFullName == '' || x.response.password == '' ) {
-        this.openSnackBar('Please enter all fields !');
-      } else {
+      if (!x.error) {
         this.openSnackBar('Employee Registered Successfully !');
+      } else {
+        this.openSnackBar(x.errorMsg);
       }
-
     });
   }
 

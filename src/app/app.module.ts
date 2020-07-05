@@ -14,6 +14,7 @@ import { EmployeeDataComponent } from './employee-data/employee-data.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
         MatTableModule,
         RouterModule.forRoot([]),
         MatIconModule,
-      MatSnackBarModule,
+        MatSnackBarModule,
+        MatProgressSpinnerModule,
     ],
   providers: [],
   bootstrap: [AppComponent]

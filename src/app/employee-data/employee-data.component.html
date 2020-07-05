@@ -7,6 +7,7 @@
   <table class="empTable">
     <thead>
    <tr>
+     <th>sno</th>
      <th>Employee Name</th>
      <th>Email Id</th>
      <th>Password</th>
@@ -14,6 +15,7 @@
     </thead>
     <tbody *ngFor="let emp of empData;let i=index">
     <tr>
+      <td>{{i+1}}</td>
       <td>{{emp.empFullName}}</td>
       <td>{{emp.emailId}}</td>
       <td>{{emp.password}}</td>

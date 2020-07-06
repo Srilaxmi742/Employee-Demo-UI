@@ -24,11 +24,7 @@ export class LoginComponent implements OnInit {
     this.empForm = this.fb.group({
       // employeeName:['',Validators.required],
       userNameOrEmailId:['',Validators.required],
-      password:['',Validators.required,
-        Validators.minLength(5),
-        Validators.maxLength(15),
-        Validators.pattern("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#\$%^&+=])(?=\\S+\$).{8,}\$")
-      ]
+      password:['',Validators.required]
 
     });
   }

@@ -23,12 +23,7 @@ export class RegistrationComponent implements OnInit {
      // id:['',Validators.required],
       employeeName:['',Validators.required],
       emailId:['',Validators.required],
-      password:['',Validators.required,
-        Validators.minLength(5),
-        Validators.maxLength(15),
-        Validators.pattern('^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#\$%^&+=])(?=\\S+\$).{8,}\$')
-      ]
-
+      password:['',Validators.required]
     });
   }
 

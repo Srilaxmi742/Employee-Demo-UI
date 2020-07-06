@@ -1,49 +1,61 @@
 
-<div style="text-align: right" class="submit-btn-panel" fxLayout="row" fxLayoutAlign="space-evenly center center">
-      <button type="submit" mat-flat-button color="primary" fxLayoutAlign="center" [routerLink]="['/login']">Login</button>
+<div class="bgimg">
+  <div>
+    <mat-card class="cardregister">
+      <div>
+        <div style="text-align: right" class="submit-btn-panel" fxLayout="row" fxLayoutAlign="space-evenly center center">
+          <button type="submit" mat-flat-button color="primary" fxLayoutAlign="center" [routerLink]="['/login']">Login</button>
+        </div>
+        <br/>
+
+        <div style="text-align: center">
+          <h3>Registration</h3>
+          <form [formGroup]="employeeForm"  (ngSubmit)="onSubmit(employeeForm)">
+            <mat-form-field>
+              <input matInput type="text" placeholder="Employee Name" formControlName="employeeName" required>
+              <mat-error *ngIf="employeeForm.get('employeeName').hasError('required')">
+                <strong>Employee Name is Required</strong>
+              </mat-error>
+              <mat-label>Enter your Full Name</mat-label>
+            </mat-form-field>
+            <br/>
+
+            <mat-form-field>
+              <input matInput placeholder="Email Id" formControlName="emailId" required>
+              <mat-error *ngIf="employeeForm.get('emailId').hasError('required')">
+                <strong>EmailId is Required</strong>
+              </mat-error>
+              <mat-label>Enter your EmailId</mat-label>
+            </mat-form-field>
+            <br/>
+
+            <mat-form-field style="margin-left: 2%;">
+              <input matInput [type]="hide ? 'password' : 'text'" placeholder="Password" formControlName="password" required>
+              <mat-error *ngIf="employeeForm.get('password').hasError('required')">
+                <strong>Password is Required</strong>
+              </mat-error>
+              <mat-label>Enter your password</mat-label>
+              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+            </mat-form-field>
+            <br/>
+
+            <div class="submit-btn-panel" fxLayout="row" fxLayoutAlign="space-evenly center center">
+              <button type="submit" mat-flat-button color="primary" fxLayoutAlign="center"
+                      [routerLink]="['/registration']">Register</button>
+
+              <button type="reset" mat-flat-button color="primary" fxLayoutAlign="right" style="margin-left: 2%;">Reset</button>
+            </div>
+
+          </form>
+
+        </div>
+
+      </div>
+    </mat-card>
+  </div>
+
 </div>
-<br/>
 
-<div style="text-align: center">
-  <h3>Registration</h3>
-  <form [formGroup]="employeeForm"  (ngSubmit)="onSubmit(employeeForm)">
-    <mat-form-field>
-      <input matInput type="text" placeholder="Employee Name" formControlName="employeeName" required>
-      <mat-error *ngIf="employeeForm.get('employeeName').hasError('required')">
-        <strong>Employee Name is Required</strong>
-      </mat-error>
-      <mat-label>Enter your Full Name</mat-label>
-    </mat-form-field>
-    <br/>
 
-    <mat-form-field>
-      <input matInput placeholder="Email Id" formControlName="emailId" required>
-      <mat-error *ngIf="employeeForm.get('emailId').hasError('required')">
-        <strong>EmailId is Required</strong>
-      </mat-error>
-      <mat-label>Enter your EmailId</mat-label>
-    </mat-form-field>
-    <br/>
-
-    <mat-form-field style="margin-left: 2%;">
-      <input matInput [type]="hide ? 'password' : 'text'" placeholder="Password" formControlName="password" required>
-      <mat-error *ngIf="employeeForm.get('password').hasError('required')">
-        <strong>Password is Required</strong>
-      </mat-error>
-      <mat-label>Enter your password</mat-label>
-      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-      </button>
-    </mat-form-field>
-    <br/>
-
-    <div class="submit-btn-panel" fxLayout="row" fxLayoutAlign="space-evenly center center">
-      <button type="submit" mat-flat-button color="primary" fxLayoutAlign="center"
-              [routerLink]="['/registration']">Register</button>
-
-      <button type="reset" mat-flat-button color="primary" fxLayoutAlign="right" style="margin-left: 2%;">Reset</button>
-    </div>
-
-  </form>
-
-</div>

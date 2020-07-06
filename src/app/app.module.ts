@@ -4,7 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatButtonModule, MatInputModule, MatTableModule} from '@angular/material';
+import {MatButtonModule, MatCardModule, MatInputModule, MatTableModule} from '@angular/material';
 import { RegistrationComponent } from './registration/registration.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
@@ -39,6 +39,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
         MatIconModule,
         MatSnackBarModule,
         MatProgressSpinnerModule,
+        MatCardModule
     ],
   providers: [],
   bootstrap: [AppComponent]

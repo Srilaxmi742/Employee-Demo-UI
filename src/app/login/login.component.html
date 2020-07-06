@@ -1,39 +1,36 @@
 
-<div style="text-align: center">
-  <h3>Login</h3>
-  <form [formGroup]="empForm"  (ngSubmit)="onSubmit(empForm)">
-   <!-- <mat-form-field>
-      <input matInput type="text" placeholder="Employee Name" formControlName="employeeName" required>
-      <mat-error *ngIf="empForm.get('employeeName').hasError('required')">
-        <strong>Student Name is Required</strong>
-      </mat-error>
-    </mat-form-field>-->
+<div class="loginbgimg">
+  <div style="text-align: center">
+    <h3>Login</h3>
+    <form [formGroup]="empForm"  (ngSubmit)="onSubmit(empForm)">
 
-    <mat-form-field>
-      <input matInput placeholder="UserName or Email Id " formControlName="userNameOrEmailId" required>
-      <mat-error *ngIf="empForm.get('userNameOrEmailId').hasError('required')">
-        <strong>EmailId or User Name is Required</strong>
-      </mat-error>
-    </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="UserName or Email Id " formControlName="userNameOrEmailId" required>
+        <mat-error *ngIf="empForm.get('userNameOrEmailId').hasError('required')">
+          <strong>EmailId or User Name is Required</strong>
+        </mat-error>
+      </mat-form-field>
+      <br/>
+      <mat-form-field>
+        <input matInput [type]="hide ? 'password' : 'text'" placeholder="Password" formControlName="password" required>
+        <mat-error *ngIf="empForm.get('password').hasError('required')">
+          <strong>Password is Required</strong>
+        </mat-error>
+        <mat-label>Enter your password</mat-label>
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+
+      <div class="submit-btn-panel" fxLayout="row" fxLayoutAlign="space-evenly center center">
+        <button type="submit" mat-flat-button color="primary" fxLayoutAlign="center">Login</button>
+        <button type="reset" mat-flat-button color="primary" fxLayoutAlign="right" style="margin-left: 2%">Reset</button>
+      </div>
+    </form>
     <br/>
-    <mat-form-field>
-      <input matInput [type]="hide ? 'password' : 'text'" placeholder="Password" formControlName="password" required>
-      <mat-error *ngIf="empForm.get('password').hasError('required')">
-        <strong>Password is Required</strong>
-      </mat-error>
-      <mat-label>Enter your password</mat-label>
-      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-      </button>
-    </mat-form-field>
+    <p>Don't have a account?<a [routerLink]="'/registration'">Create one</a></p>
 
-    <div class="submit-btn-panel" fxLayout="row" fxLayoutAlign="space-evenly center center">
-      <button type="submit" mat-flat-button color="primary" fxLayoutAlign="center">Login</button>
-      <button type="reset" mat-flat-button color="primary" fxLayoutAlign="right" style="margin-left: 2%">Reset</button>
-    </div>
-  </form>
-  <br/>
-  <p>Don't have a account?<a [routerLink]="'/registration'">Create one</a></p>
-
+  </div>
 </div>
+
 

@@ -1,11 +1,11 @@
 import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'app-sidenav',
-  templateUrl: './sidenav.component.html',
-  styleUrls: ['./sidenav.component.scss']
+  selector: 'app-sidebar',
+  templateUrl: './sidebar.component.html',
+  styleUrls: ['./sidebar.component.scss']
 })
-export class SidenavComponent implements OnInit {
+export class SidebarComponent implements OnInit {
 
   @Input('items') public menuItems: any[] = [];
   @Input('hasIconMenu') public hasIconTypeMenuItem: boolean;

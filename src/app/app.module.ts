@@ -4,10 +4,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatButtonModule, MatCardModule, MatInputModule, MatTableModule} from '@angular/material';
+import {MatButtonModule, MatCardModule, MatInputModule, MatTableModule, MatTooltipModule} from '@angular/material';
 import { RegistrationComponent } from './registration/registration.component';
 import {ReactiveFormsModule} from '@angular/forms';
-import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import {RouterModule} from '@angular/router';
 import { EmployeeDataComponent } from './employee-data/employee-data.component';
@@ -19,7 +19,9 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import {AuthService} from "./session/auth.service";
 import {AuthGuard} from "./session/auth.guard";
-
+import { HomeComponent } from './home/home.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import {TranslateModule} from '@ngx-translate/core';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,8 @@ import {AuthGuard} from "./session/auth.guard";
     LoginComponent,
     EmployeeDataComponent,
     SidenavComponent,
+    HomeComponent,
+    SidebarComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,7 +49,9 @@ import {AuthGuard} from "./session/auth.guard";
     MatProgressSpinnerModule,
     MatCardModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    MatTooltipModule,
+    TranslateModule.forRoot()
   ],
   providers: [
     AuthService, AuthGuard

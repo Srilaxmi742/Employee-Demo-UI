@@ -4,6 +4,7 @@ import {RegistrationService} from '../registration/registration.service';
 import {LoginDto} from './login';
 import {MatSnackBar } from '@angular/material/snack-bar';
 import {Router} from "@angular/router";
+import {AuthService} from "../session/auth.service";
 
 @Component({
   selector: 'app-login',
@@ -13,8 +14,9 @@ import {Router} from "@angular/router";
 export class LoginComponent implements OnInit {
 
   hide = true;
-  empForm:FormGroup;
-  constructor(private registrationService:RegistrationService,
+  empForm: FormGroup;
+  constructor(private registrationService: RegistrationService,
+              private authService: AuthService,
               private fb: FormBuilder,
               private snackBar: MatSnackBar,
               private router: Router) { }
@@ -29,7 +31,7 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  onSubmit(data:FormGroup){
+  onSubmit(data: FormGroup){
 
     let empInfo = new LoginDto();
 
@@ -37,7 +39,7 @@ export class LoginComponent implements OnInit {
     empInfo.userNameOrEmailId = this.empForm.controls['userNameOrEmailId'].value;
     empInfo.password = this.empForm.controls['password'].value;
 
-    this.registrationService.getLoginDetails(empInfo).subscribe(data=>{
+    this.authService.getLoginDetails(empInfo).subscribe(data=>{
       console.log(data);
       if (!data.error) {
         this.router.navigate(['/employeeList']);

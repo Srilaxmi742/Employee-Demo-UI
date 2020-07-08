@@ -7,9 +7,7 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
-  @Input('items') public menuItems: any[] = [];
-  @Input('hasIconMenu') public hasIconTypeMenuItem: boolean;
-  @Input('iconMenuTitle') public iconTypeMenuTitle: string;
+
 
   constructor() { }
 

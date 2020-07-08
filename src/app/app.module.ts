@@ -17,11 +17,10 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
-import {AuthService} from "./session/auth.service";
-import {AuthGuard} from "./session/auth.guard";
+import {AuthService} from './session/auth.service';
+import {AuthGuard} from './session/auth.guard';
 import { HomeComponent } from './home/home.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
-import {TranslateModule} from '@ngx-translate/core';
 
 
 @NgModule({
@@ -51,8 +50,7 @@ import {TranslateModule} from '@ngx-translate/core';
     MatCardModule,
     MatSidenavModule,
     MatListModule,
-    MatTooltipModule,
-    TranslateModule.forRoot()
+    MatTooltipModule
   ],
   providers: [
     AuthService, AuthGuard

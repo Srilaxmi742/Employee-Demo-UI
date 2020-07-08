@@ -25,6 +25,7 @@ const routes: Routes = [
     component: HomeComponent,
   },
   {
+    path: 'employeeList',
     component:EmployeeDataComponent,
     canActivate: [AuthGuard]
 

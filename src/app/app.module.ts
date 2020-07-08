@@ -23,6 +23,7 @@ import { HomeComponent } from './home/home.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import {TranslateModule} from '@ngx-translate/core';
 
+
 @NgModule({
   declarations: [
     AppComponent,

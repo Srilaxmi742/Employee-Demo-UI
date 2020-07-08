@@ -4,7 +4,7 @@ import {LoginComponent} from './login/login.component';
 import {RegistrationComponent} from './registration/registration.component';
 import {EmployeeDataComponent} from './employee-data/employee-data.component';
 import {HomeComponent} from './home/home.component';
-
+import {AuthGuard} from './session/auth.guard';
 
 const routes: Routes = [
 
@@ -21,8 +21,13 @@ const routes: Routes = [
     component:EmployeeDataComponent
   },
   {
-    path:'home',
-    component:HomeComponent
+    path: 'home',
+    component: HomeComponent,
+  },
+  {
+    component:EmployeeDataComponent,
+    canActivate: [AuthGuard]
+
   }
 ];
 

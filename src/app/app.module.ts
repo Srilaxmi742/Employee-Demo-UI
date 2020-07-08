@@ -17,8 +17,9 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
-import {AuthService} from "./session/auth.service";
-import {AuthGuard} from "./session/auth.guard";
+import {AuthService} from './session/auth.service';
+import {AuthGuard} from './session/auth.guard';
+import {RegistrationService} from './registration/registration.service';
 
 
 @NgModule({
@@ -48,7 +49,7 @@ import {AuthGuard} from "./session/auth.guard";
     MatListModule
   ],
   providers: [
-    AuthService, AuthGuard
+    AuthService, AuthGuard, RegistrationService
   ],
   bootstrap: [AppComponent]
 })

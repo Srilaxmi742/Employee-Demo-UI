@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import {LoginComponent} from './login/login.component';
 import {RegistrationComponent} from './registration/registration.component';
 import {EmployeeDataComponent} from './employee-data/employee-data.component';
+import {AuthGuard} from './session/auth.guard';
 
 
 const routes: Routes = [
@@ -17,7 +18,8 @@ const routes: Routes = [
   },
   {
     path:'employeeList',
-    component:EmployeeDataComponent
+    component:EmployeeDataComponent,
+    canActivate: [AuthGuard]
   }
 ];
 

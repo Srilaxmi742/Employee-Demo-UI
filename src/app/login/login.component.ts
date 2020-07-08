@@ -33,16 +33,22 @@ export class LoginComponent implements OnInit {
 
   onSubmit(data: FormGroup){
 
-    let empInfo = new LoginDto();
+    let loginDto = new LoginDto();
 
     // empInfo.userName = this.empForm.controls['employeeName'].value;
-    empInfo.userNameOrEmailId = this.empForm.controls['userNameOrEmailId'].value;
-    empInfo.password = this.empForm.controls['password'].value;
+    loginDto.userNameOrEmailId = this.empForm.controls['userNameOrEmailId'].value;
+    loginDto.password = this.empForm.controls['password'].value;
 
-    this.authService.getLoginDetails(empInfo).subscribe(data=>{
+    this.authService.getLoginDetails(loginDto).subscribe(data=>{
       console.log(data);
       if (!data.error) {
+        sessionStorage.setItem('userId', data.response.userId);
+        sessionStorage.setItem('token', data.response.token);
+
+        console.log(sessionStorage.getItem('token'));
         this.router.navigate(['/employeeList']);
+
+       // sessionStorage.setItem('roleList', JSON.stringify(list));
         this.openSnackBar('Login Success !');
       } else if (data.error) {
         this.openSnackBar(data.errorMsg);
